@@ -6,13 +6,7 @@ spring:
       username: root
       password: 123456
   redis:
-    database: 0
-    host: 106.75.165.129
-    port: 6380
-    password: 
-    lettuce:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
+    password: redis_hyk
+    sentinel:
+      master: mymaster
+      nodes: 172.16.16.37:26379,172.16.16.37:26380,172.16.16.37:26381
