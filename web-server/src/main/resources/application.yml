@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: spring-boot-externals
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/adhere
+      jdbc-url: jdbc:mysql://localhost:3306/adhere?useSSL=false&serverTimezone=GMT%2B8&autoReconnect=true&characterEncoding=UTF-8&rewriteBatchedStatements=true
       username: root
       password: 123456
   redis:
@@ -10,3 +12,9 @@ spring:
     sentinel:
       master: mymaster
       nodes: 172.16.16.37:26379,172.16.16.37:26380,172.16.16.37:26381
+
+nacos:
+  config:
+    server-addr: 172.16.0.100:8848
+    namespace: hyk_test
+

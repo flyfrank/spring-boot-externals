@@ -14,7 +14,7 @@ public class RedisService {
     @Autowired
     private RedisTemplate<String, String> stringRedisTemplate;
 
-    @PostConstruct
+
     public void writeRedis() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss SSS");
         while(true) {
